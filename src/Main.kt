@@ -2,6 +2,7 @@ import builder.Order
 import decorator.DataFromDatabase
 import decorator.DataFromRepository
 import decorator.DataFromServer
+import singleton.DCLSingleton
 
 fun main(args: Array<String>) {
 //    println(singleton.Singleton.getList())
@@ -24,6 +25,12 @@ fun main(args: Array<String>) {
 //    pencils.add(pencilFactory.createPencilToWrite(150))
 //    pencils.add(pencilFactory.createPencilToDraw(200, Color.RED))
 
-    val repository = DataFromRepository(true, DataFromDatabase(), DataFromServer())
-    repository.getUsers()
+//    val repository = DataFromRepository(true, DataFromDatabase(), DataFromServer())
+//    repository.getUsers()
+
+    println(DCLSingleton.getInstance().list)
+    DCLSingleton.getInstance().addElement(10)
+    DCLSingleton.getInstance().addElement(20)
+    DCLSingleton.getInstance().addElement(30)
+    println(DCLSingleton.getInstance().list)
 }
