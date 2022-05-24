@@ -1,6 +1,6 @@
 package adapter
 
 data class ElectricityFromSocket(
-    val type: String,
+    val strength: Int,
     val voltage: Int
 )

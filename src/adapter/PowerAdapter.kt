@@ -1,3 +1,9 @@
 package adapter
 
-class PowerAdapter(electricityFromSocket: ElectricityFromSocket): ElectricityToCharge("DC", 12)
+class PowerAdapter() {
+    fun adapt(electricityFromSocket: ElectricityFromSocket): ElectricityToCharge {
+        val strength = electricityFromSocket.strength - 14
+        val voltage = electricityFromSocket.voltage - 208
+        return ElectricityToCharge(strength, voltage)
+    }
+}
