@@ -1,16 +1,6 @@
-import builder.Order
-import decorator.DataFromDatabase
-import decorator.DataFromRepository
-import decorator.DataFromServer
-import singleton.DCLSingleton
+import singleton.Singleton
 
 fun main(args: Array<String>) {
-//    println(singleton.Singleton.getList())
-//    singleton.Singleton.addElement(10)
-//    singleton.Singleton.addElement(20)
-//    singleton.Singleton.addElement(30)
-//    println(singleton.Singleton.getList())
-
 //    val phone = Phone("Samsung")
 //    val electricityFromSocket = ElectricityFromSocket(16, 220)
 //    val powerAdapter = PowerAdapter()
@@ -28,9 +18,9 @@ fun main(args: Array<String>) {
 //    val repository = DataFromRepository(true, DataFromDatabase(), DataFromServer())
 //    repository.getUsers()
 
-    println(DCLSingleton.getInstance().list)
-    DCLSingleton.getInstance().addElement(10)
-    DCLSingleton.getInstance().addElement(20)
-    DCLSingleton.getInstance().addElement(30)
-    println(DCLSingleton.getInstance().list)
+    println(Singleton.getInstance().getList())
+    Singleton.getInstance().addElement(10)
+    Singleton.getInstance().addElement(20)
+    Singleton.getInstance().addElement(30)
+    println(Singleton.getInstance().getList())
 }
